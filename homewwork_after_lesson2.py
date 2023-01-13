@@ -57,13 +57,13 @@ def four():
             print("не подходит!")
         else:
             break
-    print(3 * (a + b) ** 3  +275 * b ** 2 -127 * a -41)
+    print(3 * (a + b) ** 3 + 275 * b ** 2 - 127 * a - 41)
 # four()
 
 
 def five():
     while True:
-        try: 
+        try:
             x = int(input("введите число: "))
         except ValueError:
             print("не подходит!")
@@ -95,7 +95,7 @@ def six():
 
 def seven():
     while True:
-        try: 
+        try:
            x = int(input("введите число x: "))
            y = int(input("введите число y: "))
         except ValueError:
@@ -124,7 +124,6 @@ def egg():
             break
     print(a + d * (n - 1))
 # egg()
-
 
 
 def nine():
