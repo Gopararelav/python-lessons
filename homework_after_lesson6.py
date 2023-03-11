@@ -18,7 +18,9 @@ def binser(name: "list", sernam):
     name.sort()
     low = 0
     high = len(name)-1
+    cy = 0
     while low <= high:
+        cy += 1
         mid = (low + high)
         guesna = name[mid]
         # print(guesna)
@@ -30,7 +32,7 @@ def binser(name: "list", sernam):
                     guesnu.append(str(num))
                     # print(guesnu, sernum)
         if guesnu == sernum:
-            return mid
+            return mid, cy
         elif guesnu > sernum:
             high = mid - 1
         else:
@@ -42,5 +44,5 @@ for x in range(0, 128):
     name.append(names.get_first_name().lower())
 print(name)
 sernam = input("Введите имя: ")
-iammadeit = binser(name, sernam)
-print(name[iammadeit], iammadeit)
+fina, cy = binser(name, sernam)
+print(name[fina], fina, cy)
