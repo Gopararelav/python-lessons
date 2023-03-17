@@ -2,6 +2,7 @@ file = open("decfile.txt", "r+")
 word = str(file.read()).lower()
 choice = input("encode or decode? ").lower()
 
+
 def encode(word):
     encoword = ""
     m = 0
