@@ -44,5 +44,9 @@ for x in range(0, 128):
     name.append(names.get_first_name().lower())
 print(name)
 sernam = input("Введите имя: ")
-fina, cy = binser(name, sernam)
+try:
+    fina, cy = binser(name, sernam)
+except TypeError:
+    print(None)
+    quit()
 print(name[fina], fina, cy)
