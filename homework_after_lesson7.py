@@ -7,7 +7,7 @@ def encode(word):
     encoword = ""
     m = 0
     alphabet = "abcdefghijklmnopqrstuvwxyz"
-    falphabet = "cdefghijklmnopqrstuvwxyzab"
+    falphabet = "cdefghijklmnopqrstuvwxyzabв"
     for x in word:
         m = alphabet.find(x)
         if x not in alphabet:
@@ -21,7 +21,7 @@ def decode(encoword):
     word = ""
     m = 0
     alphabet = "abcdefghijklmnopqrstuvwxyz"
-    falphabet = "cdefghijklmnopqrstuvwxab"
+    falphabet = "cdefghijklmnopqrstuvwxzab"
     for x in encoword:
         m = falphabet.find(x)
         if x not in falphabet:
@@ -36,6 +36,7 @@ if choice == "encode":
     print(encoword)
     file.write("\n" + encoword)
 elif choice == "decode":
-    encoword = encode(word)
+    encoword = word
+    word = ""
     word = decode(encoword)
     print(word)
