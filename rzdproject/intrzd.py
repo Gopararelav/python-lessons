@@ -9,6 +9,7 @@ window.iconphoto(False, tk.PhotoImage(file="rzdproject/telegram.png"))
 window.resizable(False, False)
 new = Train()
 
+
 def pprint():
     new.FIO1(name=fio.get())
     new.city(city1=city1.get(), city2=city2.get())
