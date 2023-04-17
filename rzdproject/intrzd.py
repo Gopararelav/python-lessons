@@ -11,14 +11,37 @@ new = Train()
 
 
 def pprint():
-    new.FIO1(name=fio.get())
-    new.city(city1=city1.get(), city2=city2.get())
+    if fio.get() == "ФИО" or fio.get() == "":
+        fio["bg"] = "Red"  
+        fioL["text"] = "Область обязательная для заполнения"
+        return
+    else:
+        fio["bg"] = "White"
+        fioL["text"] = "введите ФИО"
+    if city1.get() == "название1" or city1.get() == "":
+        city1["bg"] = "Red"
+        city1L["text"] = "Область обязательная для заполнения"
+        return
+    else:
+        city1["bg"] = "White"
+        city1L["text"] = "город отправления"
+    if city2.get() == "название2" or city2.get() == "":
+        city2["bg"] = "Red"
+        city2L["text"] = "Область обязательная для заполнения"
+        return
+    else:
+        city2["bg"] = "White"
+        city2L["text"] = "город приезд"
+
+    new.FIO1(fio.get())
+    new.city(city1.get(), city2.get())
     new.services(service.get())
     new.ages(int(ages.get()))
     new.train1(int(Trrain.get()))
     new.ppprint()
     Buy["text"] = "Билет куплен!"
     Buy["bg"] = "Gray"
+    Buy["state"] = "disabled"
     os.system("start РЖДбилет.png")
 
 
