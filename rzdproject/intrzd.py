@@ -5,7 +5,7 @@ window = tk.Tk()
 window.geometry("400x500")
 window.title("Продавец")
 window["bg"] = "#FCFFFC"
-window.iconphoto(False, tk.PhotoImage(file="rzdproject/telegram.png"))
+window.iconphoto(False, tk.PhotoImage(file="telegram.png"))
 window.resizable(False, False)
 new = Train()
 
@@ -39,18 +39,23 @@ def pprint():
     new.ages(int(ages.get()))
     new.train1(int(Trrain.get()))
     new.ppprint()
+    Timage.destroy()
     Buy["text"] = "Билет куплен!"
     Buy["bg"] = "Gray"
     Buy["state"] = "disabled"
     os.system("start РЖДбилет.png")
 
 
-Tim = tk.PhotoImage(file="rzdproject\Train.png")
-Rzgimg = tk.PhotoImage(file="rzdproject\РЖД.png").subsample(3, 3)
+srimg = tk.PhotoImage(file="sr.png")
+sr = tk.Label(window, image=srimg, bg="White")
+Tim = tk.PhotoImage(file="Train.png")
+Rzgimg = tk.PhotoImage(file="РЖД.png").subsample(3, 3)
 Timage = tk.Label(master=window, image=Tim, height=500, bg="White")
 RzgLab = tk.Label(window, image=Rzgimg, bg="White")
+
 Timage.place(x=0, y=0)
 RzgLab.place(x=290, y=10)
+sr.place(x=-2, y=430)
 Buy = tk.Button(master=window, text="Купить билет!", bg="Red", fg="Black",
                 font=(50), command=pprint)
 ins = tk.Label(master=window, text="Федеоальная гос\nкомпания", bg="White",

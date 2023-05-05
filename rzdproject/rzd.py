@@ -40,7 +40,6 @@ class Train():
             elif service == "Нет":
                 self.money += 0
 
-
     def ages(self, age):
         age1 = current_datetime - age
         self.age = age1
@@ -51,7 +50,6 @@ class Train():
         else:
             self.money += 700
 
-
     def train1(self, train):
         trains = list(range(0, 11))
         for i in trains:
@@ -59,10 +57,9 @@ class Train():
                 mesto = trains.pop(trains.index(i))
         self.train = mesto
 
-
     def ppprint(self):
         try:
-            tatras = Image.open("rzdproject\Wtic.jpg")
+            tatras = Image.open("Wtic.jpg")
         except:
             print("Unable to load image")
             sys.exit(1)
