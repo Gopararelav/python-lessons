@@ -15,7 +15,7 @@ window["bg"] = "#381A51"
 def crypt():
     if ch.get() == "cesar":
         text = en.get()
-        shift = 2
+        shift = int(shiftbox.get())
         shifr = ""
         alphabet = string.ascii_lowercase
         shifted_alphabet = alphabet[shift:] + alphabet[:shift]
@@ -39,7 +39,7 @@ def crypt():
 def decrypt():
     if ch.get() == "cesar":
         shifr = en.get()
-        shift = 2
+        shift = int(shiftbox.get())
         text = ""
         alphabet = string.ascii_lowercase
         shifted_alphabet = alphabet[shift:] + alphabet[:shift]
@@ -75,8 +75,9 @@ button.grid(column=2, row=0)
 lb2 = tk.Label(tab2, text="Выберите режим").grid(column=0, row=0)
 button2 = tk.Button(tab1, command=decrypt, text="decrypt", bg="#33AD11")
 button2.grid(column=3, row=0)
-ch = ttk.Combobox(tab2, )
+ch = ttk.Combobox(tab2)
 ch['values'] = ("cesar", "image")
 ch.grid(column=1, row=0)
-
+shiftbox = ttk.Spinbox(tab2, from_=0, to=36)
+shiftbox.grid(column=2, row=0)
 window.mainloop()
