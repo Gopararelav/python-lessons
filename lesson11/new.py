@@ -30,7 +30,7 @@ def crypt():
     elif ch.get() == "image":
         file = fd.askopenfilename(filetypes=[('Images', '*.png')])
         secret = lsb.hide(file, en.get())
-        file = fd.asksaveasfilename(filetypes=[('Images', '*.png')])
+        file = fd.asksaveasfilename(filetypes=[('Images', '*.png')], initialfile="Secret.png")
         secret.save(file)
     else:
         messagebox.showerror("ERROR", "введено некоректное значение")
