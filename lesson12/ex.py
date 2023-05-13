@@ -12,7 +12,7 @@ max = 6
 
 
 class new():
-    def __init__(self, penum, max) -> None:
+    def __init__(self, penum: int, max: int) -> None:
         self.penum = penum
         self.min = 2
         self.max = max
@@ -37,7 +37,7 @@ class new():
             lbl3["text"] = "количество: " + str(page[f"C{penum}"].value)
             self.penum = penum
 
-    def add(self, name, price, count):
+    def add(self, name: None, price: None, count: None):
         print("in progress!!!")
 
 
